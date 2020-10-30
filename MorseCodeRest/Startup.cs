@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -27,6 +28,10 @@ namespace MorseCodeRest
         {
             services.AddControllers();
 
+            services.AddCors(config => config.AddDefaultPolicy(policySetup =>
+                {
+                    policySetup.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
+                }));
             services.AddSwaggerGen(config =>
             {
                 config.SwaggerDoc("MorseTranslator", new OpenApiInfo
