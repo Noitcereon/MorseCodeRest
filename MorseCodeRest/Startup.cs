@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 
 namespace MorseCodeRest
 {
@@ -25,6 +26,16 @@ namespace MorseCodeRest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(config =>
+            {
+                config.SwaggerDoc("MorseTranslator", new OpenApiInfo
+                {
+                    Title = "Morse Code Translator API",
+                    Description = "This API translates morse code input (eg. .- = A)",
+                    Version = "V1"
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +47,12 @@ namespace MorseCodeRest
             }
 
             app.UseRouting();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/MorseTranslator/swagger.json", "MorseTranslator2zx");
+            });
 
             app.UseAuthorization();
 
