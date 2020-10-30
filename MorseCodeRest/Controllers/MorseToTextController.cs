@@ -18,18 +18,28 @@ namespace MorseCodeRest.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult GetNormalChar([FromQuery]string morseCharacter)
+        public IActionResult TranslateCharacter([FromQuery]string morseCharacter)
         {
             if (morseCharacter.Length > 5)
             {
                 return BadRequest("Input too long. Morse code takes up to 5 characters. Example input: --. (should return G)");
             }
 
-            if (_manager.GetNormalChar(morseCharacter).Length > 1)
+            if (_manager.Translate(morseCharacter).Length > 1)
             {
                 return NotFound("Input doesn't translate to a character.");
             }
-            return Ok(_manager.GetNormalChar(morseCharacter));
+            return Ok(_manager.Translate(morseCharacter)); 
         }
+
+        // TODO: Translate more than just a single morse code character at a time.
+        // Unimplmented because it requires to convert a string into an Enumerable object to check each morseCharacter.
+        // Probably something with a StringBuilder, which splits the string whenever there is a space or something...
+
+        //[HttpGet("")]
+        //public IActionResult Translate(IEnumerable<string> morseCharacters)
+        //{
+        //    return Ok(_manager.Translate(morseCharacters));
+        //}
     }
 }

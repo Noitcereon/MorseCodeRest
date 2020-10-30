@@ -20,10 +20,31 @@ namespace MorseCodeRest.Managers
             { "--...", "7" }, { "---..", "8" }, { "----.", "9" }, { "-----", "0" }
 
         };
-        public string GetNormalChar(string morseCharacter)
+        /// <summary>
+        /// Translates a single morse character to normal character.
+        /// </summary>
+        /// <param name="morseCharacter">A single morse character, eg. ".-"</param>
+        /// <returns></returns>
+        public string Translate(string morseCharacter)
         {
             _morseDictionary.TryGetValue(morseCharacter, out string output);
             return string.IsNullOrWhiteSpace(output) ? "Couldn't find value." : output;
+        }
+
+        /// <summary>
+        /// Translates a collection of morse characters into a readable word.
+        /// </summary>
+        /// <param name="morseCharacters">A Collection of morse characters</param>
+        /// <returns></returns>
+        public string Translate(IEnumerable<string> morseCharacters)
+        {
+            string output = "";
+            foreach (var character in morseCharacters)
+            {
+                output += Translate(character);
+            }
+
+            return output;
         }
     }
 }

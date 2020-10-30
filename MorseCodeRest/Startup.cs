@@ -51,7 +51,7 @@ namespace MorseCodeRest
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/MorseTranslator/swagger.json", "MorseTranslator2zx");
+                c.SwaggerEndpoint("/swagger/MorseTranslator/swagger.json", "Morse Translator");
             });
 
             app.UseAuthorization();
