@@ -26,12 +26,13 @@ namespace MorseCodeRest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
-
             services.AddCors(config => config.AddDefaultPolicy(policySetup =>
                 {
                     policySetup.AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod();
                 }));
+
+            services.AddControllers();
+
             services.AddSwaggerGen(config =>
             {
                 config.SwaggerDoc("MorseTranslator", new OpenApiInfo
@@ -58,6 +59,7 @@ namespace MorseCodeRest
             {
                 c.SwaggerEndpoint("/swagger/MorseTranslator/swagger.json", "Morse Translator");
             });
+            app.UseCors();
 
             app.UseAuthorization();
 
