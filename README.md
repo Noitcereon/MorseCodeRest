@@ -19,6 +19,10 @@ If you have it running locally you can access it in your browser through somethi
 
 [baseUrl]/api/translate?morseCharacter=[morseCharacterInput]
 
+Example: `curl -X GET "http://localhost:62032/api/translate?morseCharacter=." -H  "accept: */*"`
+
+Output: `E`
+
 
 ## Maintainer
 [Noitcereon](https://github.com/Noitcereon)
