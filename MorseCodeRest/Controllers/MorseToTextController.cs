@@ -27,7 +27,7 @@ namespace MorseCodeRest.Controllers
 
             if (_manager.Translate(morseCharacter).Length > 1)
             {
-                return NotFound("Input doesn't translate to a character.");
+                return NotFound("The morse code input doesn't translate to a character.");
             }
             return Ok(_manager.Translate(morseCharacter)); 
         }
