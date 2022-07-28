@@ -14,9 +14,11 @@ The easiest way to get this API running is by using Visual Studio. Follow these 
 
 ## Usage
 
-There is currently only two endpoints: 
+There are currently only two endpoints: 
 - /api/translate?morseCharacter=[morseCharacter]
 - /api/translate/word?morseCharactersSeperatedBySpace=[morseCharacter] [morseCharacter] [morseCharacter]
+
+You can see all endpoints when you have it running typing in `localhost:[yourPort]/swagger`
 
 If you have it running locally you can access it in your browser through something like this url:
 
