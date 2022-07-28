@@ -36,11 +36,17 @@ Output: `SOS`
 
 Translating single morse character:
 
+![image](https://user-images.githubusercontent.com/40148361/181457869-4fd732b2-fa60-4aac-bdeb-7c99b51ac392.png)
+
 ![image](https://user-images.githubusercontent.com/40148361/181268648-a1576dce-86dd-4e61-a857-490703cc06b7.png)
 
 Translating word:
 
+![image](https://user-images.githubusercontent.com/40148361/181457801-16f34feb-6569-4ac0-878f-1540e1fc41d3.png)
+
 ![image](https://user-images.githubusercontent.com/40148361/181457305-dc7c6a88-1b5c-4530-bce7-6a9633a8bcdc.png)
+
+
 
 
 
