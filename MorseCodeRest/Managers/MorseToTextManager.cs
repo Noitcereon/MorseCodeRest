@@ -24,7 +24,7 @@ namespace MorseCodeRest.Managers
         /// Translates a single morse character to normal character.
         /// </summary>
         /// <param name="morseCharacter">A single morse character, eg. ".-"</param>
-        /// <returns></returns>
+        /// <returns>The translated morse code as a single roman letter</returns>
         public string Translate(string morseCharacter)
         {
             _morseDictionary.TryGetValue(morseCharacter, out string output);
@@ -35,13 +35,20 @@ namespace MorseCodeRest.Managers
         /// Translates a collection of morse characters into a readable word.
         /// </summary>
         /// <param name="morseCharacters">A Collection of morse characters</param>
-        /// <returns></returns>
+        /// <returns>The translated morse code as roman letters</returns>
         public string Translate(IEnumerable<string> morseCharacters)
         {
             string output = "";
             foreach (var character in morseCharacters)
             {
-                output += Translate(character);
+                if(character.Contains('.') || character.Contains('-'))
+                {
+                    output += Translate(character);
+                }
+                else
+                {
+                    output += character;
+                }
             }
 
             return output;
