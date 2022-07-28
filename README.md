@@ -14,9 +14,11 @@ The easiest way to get this API running is by using Visual Studio. Follow these 
 
 ## Usage
 
-There is currently only two endpoints: 
+There are currently only two endpoints: 
 - /api/translate?morseCharacter=[morseCharacter]
 - /api/translate/word?morseCharactersSeperatedBySpace=[morseCharacter] [morseCharacter] [morseCharacter]
+
+You can see all endpoints when you have it running typing in `localhost:[yourPort]/swagger`
 
 If you have it running locally you can access it in your browser through something like this url:
 
@@ -27,6 +29,8 @@ If you have it running locally you can access it in your browser through somethi
 ### Curl Examples
 
 Example: `curl -X GET "http://localhost:62032/api/translate?morseCharacter=." -H  "accept: */*"`
+
+Output: `E`
 
 Example with word: `curl -X GET "http://localhost:62032/api/translate/word?morseCharactersSeperatedBySpace=...%20---%20..." -H  "accept: */*"`
 
@@ -45,8 +49,6 @@ Translating word:
 ![image](https://user-images.githubusercontent.com/40148361/181457801-16f34feb-6569-4ac0-878f-1540e1fc41d3.png)
 
 ![image](https://user-images.githubusercontent.com/40148361/181457305-dc7c6a88-1b5c-4530-bce7-6a9633a8bcdc.png)
-
-
 
 
 
