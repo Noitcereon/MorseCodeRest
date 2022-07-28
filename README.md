@@ -32,7 +32,7 @@ Example with word: `curl -X GET "http://localhost:62032/api/translate/word?morse
 
 Output: `SOS`
 
-### JavaScript example
+### JavaScript examples
 
 Translating single morse character:
 
