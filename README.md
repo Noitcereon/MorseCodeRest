@@ -18,9 +18,9 @@ There are currently only two endpoints:
 - /api/translate?morseCharacter=[morseCharacter]
 - /api/translate/word?morseCharactersSeperatedBySpace=[morseCharacter] [morseCharacter] [morseCharacter]
 
-You can see all endpoints when you have it running typing in `localhost:[yourPort]/swagger`
+You can see all endpoints when you have it running at this url: `localhost:[yourPort]/swagger`
 
-If you have it running locally you can access it in your browser through something like this url:
+You can also access it in your browser through something like this url:
 
 `http://localhost:62032/api/translate?morseCharacter=.`
 
