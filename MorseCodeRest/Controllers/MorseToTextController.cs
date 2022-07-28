@@ -36,10 +36,11 @@ namespace MorseCodeRest.Controllers
         // Unimplmented because it requires to convert a string into an Enumerable object to check each morseCharacter.
         // Probably something with a StringBuilder, which splits the string whenever there is a space or something...
 
-        //[HttpGet("")]
-        //public IActionResult Translate(IEnumerable<string> morseCharacters)
-        //{
-        //    return Ok(_manager.Translate(morseCharacters));
-        //}
+        [HttpGet("word")]
+        public IActionResult TranslateWord([FromQuery] String morseCharactersSeperatedBySpace)
+        {
+            IEnumerable<String> characters = morseCharactersSeperatedBySpace.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            return Ok(_manager.Translate(characters));
+        }
     }
 }
