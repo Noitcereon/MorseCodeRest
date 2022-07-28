@@ -14,7 +14,9 @@ The easiest way to get this API running is by using Visual Studio. Follow these 
 
 ## Usage
 
-There is currently only one endpoint: /api/translate?morseCharacter=[morseCharacter]
+There is currently only two endpoints: 
+- /api/translate?morseCharacter=[morseCharacter]
+- /api/translate/word?morseCharactersSeperatedBySpace=[morseCharacter] [morseCharacter] [morseCharacter]
 
 If you have it running locally you can access it in your browser through something like this url:
 
@@ -22,15 +24,24 @@ If you have it running locally you can access it in your browser through somethi
 
 [baseUrl]/api/translate?morseCharacter=[morseCharacterInput]
 
-### Curl Example
+### Curl Examples
 
 Example: `curl -X GET "http://localhost:62032/api/translate?morseCharacter=." -H  "accept: */*"`
 
-Output: `E`
+Example with word: `curl -X GET "http://localhost:62032/api/translate/word?morseCharactersSeperatedBySpace=...%20---%20..." -H  "accept: */*"`
+
+Output: `SOS`
 
 ### JavaScript example
 
+Translating single morse character:
+
 ![image](https://user-images.githubusercontent.com/40148361/181268648-a1576dce-86dd-4e61-a857-490703cc06b7.png)
+
+Translating word:
+
+![image](https://user-images.githubusercontent.com/40148361/181457305-dc7c6a88-1b5c-4530-bce7-6a9633a8bcdc.png)
+
 
 
 ## Maintainer
