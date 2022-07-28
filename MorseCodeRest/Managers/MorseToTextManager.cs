@@ -47,7 +47,7 @@ namespace MorseCodeRest.Managers
                 }
                 else
                 {
-                    output += character;
+                    output += " InvalidMorseCharacter ";
                 }
             }
 
